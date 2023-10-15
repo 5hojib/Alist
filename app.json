@@ -7,6 +7,11 @@
             "description": "TIMEZONE",
             "required": false,
             "value": "Asia/Dhaka"
+        },
+        "CDN": {
+        	  "description": "CDN URL",
+        	  "value": "https://cdn.jsdelivr.net/gh/5hojib/alist-web-dist@main/dist/",
+        	  "readonly": true
         }
     },
     "addons": [{"plan": "heroku-postgresql"}],
