@@ -1,0 +1,32 @@
+name: Deploy to Heroku
+
+on:
+  workflow_dispatch:
+    inputs:
+      heroku_api_key:
+        description: 'Heroku API Key'
+        required: true
+      heroku_app_name:
+        description: 'Heroku App Name'
+        required: true
+      heroku_email:
+        description: 'Heroku Email'
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ inputs.heroku_api_key }}
+          heroku_app_name: ${{ inputs.heroku_app_name }}
+          heroku_email: ${{ inputs.heroku_email }}
+          usedocker: true
+          docker_heroku_process_type: web
+          stack: "container"
+          region: "eu"
