@@ -3,10 +3,10 @@
     "description": "Deploy",
     "keywords": ["Deploy"],
     "env": {
-        "TZ": {
-            "description": "TIMEZONE",
+        "DATABASE_URL": {
+            "description": "HELLO",
             "required": false,
-            "value": "Asia/Dhaka"
+            "value": ""
         },
         "CDN": {
         	  "description": "CDN URL",
